@@ -1,0 +1,64 @@
+# programa 1
+
+main()
+{
+  //entrada
+  int num, antecessor;
+  printf("Digite um numero: ");
+  scanf("%i", &num);
+  //processamento 
+  antecessor = num - 1;
+  //saida
+  printf("O antecessor de %i = %i", num, antecessor);
+  return 0;
+}
+
+#programa 2
+
+main()
+{
+  //entrada
+  float salario_atual, salario_novo,percentual_reajuste, aumento;
+  printf("Digite o salario atual: R$");
+  scanf("%f", &salario_atual);
+  printf("Digite a porcentagem do reajuste: ");
+  scanf("%f", &percentual_reajuste);
+  //processamento
+  salario_novo = ((salario_atual / 100) * percentual_reajuste) + salario_atual;
+  aumento = salario_novo - salario_atual;
+  //saida
+  printf("Salario Atual: R$%.2f\n", salario_atual);
+  printf("Percentual de reajuste: %.0f\n",percentual_reajuste);
+  printf("Salario atualizado: R$%.2f\n", salario_novo);
+  printf("Aumento: R$%.2f\n", aumento);
+  return 0;
+}
+
+# programa 3
+
+main()
+{
+  //entrada
+  float salario_fixo, comissao_fixa, valor_carro, valor_total_carros, salario_final, valor_com_comissao, valor_5_porcento;
+  int quant_carros, cod_vendedor;
+  printf("Digite o codigo do vendedor: ");
+  scanf("%i", &cod_vendedor);
+  printf("Digite quantos carros o funcionario vendeu: ");
+  scanf("%i", &quant_carros);
+
+  //processamento
+  salario_fixo = 2000;
+  comissao_fixa = 2;
+  valor_carro = 10000;
+  valor_total_carros = quant_carros * valor_carro;
+  valor_5_porcento = ((valor_total_carros / 100) * 5 );
+  valor_com_comissao = ((valor_carro / 100) * comissao_fixa) * quant_carros;
+  salario_final = salario_fixo + valor_5_porcento + valor_com_comissao;
+
+  //saida
+  printf("O salario final do vendedor * %i * e de: R$%.2f\n", cod_vendedor, salario_final);
+  printf("Ele vendeu * %i * Carros no valor total de: R$%.2f\n", quant_carros, valor_total_carros);
+  printf("Sua comissao de * 2%% * por carro vendido no total de: R$%.2f\n", valor_com_comissao);
+  printf("E seus * 5%% * por carro vendido no total de: R$%.2f\n", valor_5_porcento);
+  return 0;
+}
