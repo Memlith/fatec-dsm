@@ -68,3 +68,7 @@ coverage/         # Test coverage reports (Jest, Mocha, etc.)
 *.bak             # Backup files
 *.swp             # Vim swap files
 
+# -----------------------
+# Auto Fetch
+# -----------------------
+git_auto_fetch.sh
