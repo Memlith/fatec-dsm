@@ -1,6 +1,6 @@
 # -----------------------
 # Operating System files
-# -----------------------
+ -----------------------
 .DS_Store        # macOS
 Thumbs.db        # Windows
 desktop.ini      # Windows
@@ -68,3 +68,7 @@ coverage/         # Test coverage reports (Jest, Mocha, etc.)
 *.bak             # Backup files
 *.swp             # Vim swap files
 
+# -----------------------
+# Auto Fetch
+# -----------------------
+git_auto_fetch.sh

@@ -1,0 +1,9 @@
+Crie um novo projeto (crie uma pasta com o nome de exercicio01_seunome) x
+Abra a pasta no VS Code x 
+Crie as pastas css e img x 
+Na raiz crie index.html x 
+Na pasta css crie estilos.css x 
+Em index.html edite todo o head (conforme a aula) e link com o css x
+No body do index.html crie 3 divs (cada uma com um id especifico) x
+Dentro de cada div inclua p, h1, h2, h3 x
+No estilos.css formate o body, h1, h2 e todas as divs (#nome) x
