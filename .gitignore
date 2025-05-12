@@ -72,3 +72,8 @@ coverage/         # Test coverage reports (Jest, Mocha, etc.)
 # Auto Fetch
 # -----------------------
 git_auto_fetch.sh
+
+
+# -----------------------
+# Projects
+# -----------------------
