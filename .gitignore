@@ -1,20 +1,20 @@
 # -----------------------
 # Operating System files
  -----------------------
-.DS_Store        # macOS
+
 Thumbs.db        # Windows
 desktop.ini      # Windows
 
 # -----------------------
 # IDE/Editor files
 # -----------------------
-.vscode/          # Visual Studio Code settings
-.idea/            # JetBrains IDEs (IntelliJ, PhpStorm, etc.)
+/.vscode          # Visual Studio Code settings
+/.idea            # JetBrains IDEs (IntelliJ, PhpStorm, etc.)
 *.sublime-workspace  # Sublime Text workspace
 *.sublime-project   # Sublime Text project
-.project          # Eclipse
-.classpath        # Eclipse
-.settings/        # Eclipse settings
+/.project          # Eclipse
+/.classpath        # Eclipse
+/.settings        # Eclipse settings
 
 # -----------------------
 # Build output folders
@@ -77,3 +77,4 @@ git_auto_fetch.sh
 # -----------------------
 # Projects
 # -----------------------
+./semestre_2/projeto_integrador/segunda_entrega/my_spot

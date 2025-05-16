@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Task;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class TaskController extends Controller
 {
@@ -12,6 +13,7 @@ class TaskController extends Controller
      */
     public function index()
     {
+        $user = Auth::user();
         $tasks = Task::all();
         return view("task.index", compact('tasks'));
     }
@@ -30,6 +32,8 @@ class TaskController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
+        $user = Auth::user();
+        $data['user_id'] = $user->id;
         Task::create($data);
         return redirect()->route('task.index');
     }
@@ -43,10 +47,26 @@ class TaskController extends Controller
     }
 
     /**
+     * Validates user access
+     */
+    private function validaAcesso(Task $task)
+    {
+        $user = Auth::user();
+        if ($task->user_id != $user->id)
+        {
+            return false;
+        }
+        return true;
+    }
+    /**
+     *
      * Show the form for editing the specified resource.
      */
     public function edit(Task $task)
     {
+        if(!$this->validaAcesso($task)){
+            return redirect()->route('task.index');
+        }
         return view('task.edit', compact('task'));
     }
 
@@ -55,6 +75,9 @@ class TaskController extends Controller
      */
     public function update(Request $request, Task $task)
     {
+        if(!$this->validaAcesso($task)){
+            return redirect()->route('task.index');
+        }
         $data = $request->all();
         $task->update($data);
         return redirect()->route('task.index');
@@ -65,7 +88,9 @@ class TaskController extends Controller
      */
     public function destroy(Task $task)
     {
-        //$task = Task::find($id);
+        if(!$this->validaAcesso($task)){
+            return redirect()->route('task.index');
+        }
         $task->delete();
         return redirect()->route('task.index');
     }
