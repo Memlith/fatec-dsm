@@ -44,7 +44,6 @@
                                                 class="py-2 px-3 bg-white dark:bg-red-900 overflow-hidden shadow-sm sm:rounded-lg"
                                                 type="submit">Delete</button>
                                         </form>
-
                                     </td>
                                 </tr>
                             @endforeach

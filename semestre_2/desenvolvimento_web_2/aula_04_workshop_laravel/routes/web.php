@@ -22,7 +22,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/task', [TaskController::class, 'index'])->name('task.index');
     Route::delete('/task/{task}', [TaskController::class, 'destroy'])->name('task.destroy');
     Route::get('/task/{task}', [TaskController::class,'edit'])->name('task.edit');
-
     Route::patch('/task/{task}', [TaskController::class,'update'])->name('task.update');
 });
 

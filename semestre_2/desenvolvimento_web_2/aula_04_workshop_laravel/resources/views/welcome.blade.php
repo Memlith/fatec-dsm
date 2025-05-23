@@ -516,7 +516,7 @@
                 max-width: 877px
             }
 
-            .flex-1 {
+            ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICZ69alaqhjfKKRi1sQTOSHPHZUM0ao2mTo935MbFNba windows-2-linux .flex-1 {
                 flex: 1 1 0%
             }
 
