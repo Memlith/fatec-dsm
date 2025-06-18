@@ -16,8 +16,8 @@ Este repositório contém anotações, exercícios, projetos e materiais de estu
 ## 🔗 Portfólios separados
 
 - [FATEC DSM - Website para o Curso de DSM da FATEC](https://github.com/ApoloLB/PI-FATEC-D4G)
-- [MySpot - Gerenciamento de Estacionamentos](https://www.github.com/memlith/myspot)
-- 
+- [MySpot - Gerenciamento de Estacionamentos](https://www.github.com/memlith/my-spot)
+- [Projeto Loja POO Python](https://www.github.com/memlith/projeto-loja)
 
 ---
 
