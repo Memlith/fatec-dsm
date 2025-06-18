@@ -9,7 +9,7 @@ float peso_ideal(float altura, char sexo)
 {
   while (sexo != 'M' && sexo != 'm' && sexo != 'F' && sexo != 'f')
   {
-    printf("sexo invalido! Digite novamente (M/F): ");
+    printf("sexo invalido! Digite novamente\nsexo (M/F): ");
     scanf(" %c", &sexo);
   }
   if (sexo == 'M' || sexo == 'm')
@@ -22,7 +22,7 @@ float calcular_media(float nota1, float nota2, char tipo)
 {
   while (tipo != 'A' && tipo != 'a' && tipo != 'P' && tipo != 'p')
   {
-    printf("tipo invalido! Digite novamente (A/P): ");
+    printf("tipo invalido! Digite novamente\ntipo (A/P): ");
     scanf(" %c", &tipo);
   }
   if (tipo == 'A' || tipo == 'a')
