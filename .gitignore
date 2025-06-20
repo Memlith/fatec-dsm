@@ -1,18 +1,15 @@
 # Operating System files
-
-Thumbs.db        # Windows
-desktop.ini      # Windows
+Thumbs.db
+desktop.ini
 
 # IDE/Editor files
 .vscode/
 
 # Build output folders
-
-node_modules/     # Node.js dependencies
-dist/             # Distribution build output
-build/            # Build output
-target/           # Maven build output
-
+node_modules/
+dist/
+build/
+target/
 
 # Environment files
 .env
@@ -20,23 +17,10 @@ target/           # Maven build output
 .env.development
 .env.production
 
-# Compiled or binary files
-*.class           # Java compiled files
-*.exe             # Executables
-*.o               # Object files
-*.out             # Executable output
-*.dll             # Dynamic Link Libraries
-
-# Temporary and log files
-*.log             # Log files
-*.tmp             # Temporary files
-*.bak             # Backup files
-*.swp             # Vim swap files
-
 # Dependency manager lock files (if using npm, yarn, etc.)
-yarn.lock         # Yarn lock file
-package-lock.json # npm lock file
-composer.lock     # Composer lock file (PHP)
+yarn.lock
+package-lock.json
+composer.lock
 
 # Auto Fetch
 git_auto_fetch.sh
