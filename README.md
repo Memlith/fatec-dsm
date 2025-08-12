@@ -8,7 +8,7 @@ Este repositório contém anotações, exercícios, projetos e materiais de estu
 
 ## 🧠 Como usar
 
-- Cada pasta de matéria pode conter: arquivos `.md`, códigos-fonte, PDFs de anotações, exercícios resolvidos e projetos desenvolvidos.
+- Cada pasta de matéria pode conter: arquivos `.md`, códigos-fonte, PDFs, exercícios resolvidos e projetos desenvolvidos.
 - Projetos de destaque podem ser movidos para repositórios separados e linkados abaixo.
 
 ---
@@ -42,8 +42,9 @@ O curso aborda disciplinas como:
 ## 🚀 Progresso
 
 ✅ Semestre 1  
-🔄 Semestre 2 (em andamento)  
-⬜ Semestre 3+ (em breve)
+✅ Semestre 2
+🔄 Semestre 3 (em andamento)  
+⬜ Semestre 4+ (em breve)
 
 ---
 

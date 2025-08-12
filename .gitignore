@@ -25,6 +25,11 @@ composer.lock
 # Auto Fetch
 git_auto_fetch.sh
 
-# Projects
-semestre_2/tecnicas_de_programacao/projeto_loja
-semestre_2/projeto_integrador/segunda_entrega/my_spot
+# Projetos
+first/projeto_integrador
+second/projeto_integrador/my_spot
+third/projeto_integrador
+
+#Atividade
+second/tecnicas_de_programacao/projeto_loja
+
