@@ -25,6 +25,10 @@ composer.lock
 # Auto Fetch
 git_auto_fetch.sh
 
+# Docker
+second/banco_de_dados/docker-phpmyadmin
+third/banco_de_dados_nosql/docker-mongodb
+
 # Projetos
 first/projeto_integrador
 second/projeto_integrador/my_spot
