@@ -7,8 +7,8 @@ public class Main {
 
     public static void main(String[] args) {
         System.out.println("Exemplo do Principio da Substituicao de Liskov (L)");
-        Estudante graduacao = new EstudanteDeGraduacao();
-        Estudante posGraduacao = new EstudanteDePosGraduacao();
+        Estudante graduacao = new EstudanteDeGraduacao("Caio");
+        Estudante posGraduacao = new EstudanteDePosGraduacao("Jamilly");
 
         List<Estudante> estudantes = new ArrayList<>();
         estudantes.add(graduacao);
