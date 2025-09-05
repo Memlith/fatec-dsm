@@ -4,7 +4,7 @@ public class EstudanteDeGraduacao extends Estudante {
 
     @Override
     public void estudar() {
-        System.out.println(nome + " está estudando na graduação.");
+        System.out.println(nome + " esta estudando na graduacao.");
     }
 
     public void entregarTCC() {

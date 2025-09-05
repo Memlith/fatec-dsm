@@ -10,7 +10,8 @@ public class AprovaRaioX implements AprovaExame {
     }
 
     @Override
-    boolean verificaCondicoesExame(Exame exame) {
-        //....
+    public boolean verificaCondicoesExame(Exame exame) {
+        System.out.println("Verificando condicoes para Raio-X...");
+        return true; // simula que as condicoes foram atendidas
     }
 }

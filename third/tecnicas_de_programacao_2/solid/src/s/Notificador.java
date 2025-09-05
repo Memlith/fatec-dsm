@@ -3,6 +3,6 @@ package s;
 public class Notificador {
 
     public void enviarNotificacao() {
-        System.out.println("Enviando notificação...");
+        System.out.println("Enviando notificacaso...");
     }
 }

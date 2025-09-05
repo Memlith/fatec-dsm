@@ -6,11 +6,11 @@ public class Vendedor implements Funcionario, Comissionavel {
 
     @Override
     public BigDecimal salario() {
-        return null;
+        return new BigDecimal("2500.00");
     }
 
     @Override
     public BigDecimal gerarComissao() {
-        return null;
+        return new BigDecimal("500.00");
     }
 }
