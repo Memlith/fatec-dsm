@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Gerenciamento de produtos</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 40px;
+        background-color: #f4f6f8;
+      }
+      h1 {
+        text-align: center;
+        color: #333;
+      }
+      form {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 20px;
+        justify-content: center;
+      }
+      input {
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+      }
+      button {
+        padding: 8px 14px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #0056b3;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        background-color: white;
+      }
+      th,
+      td {
+        padding: 10px;
+        border-bottom: 1px solid #ccc;
+        text-align: left;
+      }
+      th {
+        background-color: #007bff;
+        color: white;
+      }
+      .actions button {
+        margin-right: 5px;
+        background-color: #28a745;
+      }
+      .actions button.delete {
+        background-color: #dc3545;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Cadastro de Produtos</h1>
+
+    <form id="productForm">
+      <input type="hidden" id="productId" />
+      <input type="text" id="nome" placeholder="Nome" required />
+      <input type="preco" id="preco" placeholder="Preço" required />
+      <input type="descricao" id="descricao" placeholder="Descrição" required />
+      <input type="estoque" id="estoque" placeholder="Quantidade" required />
+      <button type="submit">Salvar</button>
+      <button type="button" onclick="novoProduto()">Novo Produto</button>
+    </form>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Preco</th>
+          <th>Descrição</th>
+          <th>Quantidade</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody id="productTable"></tbody>
+    </table>
+
+    <script>
+      const apiUrl = "http://localhost:3000/produtos";
+      const form = document.getElementById("productForm");
+      const table = document.getElementById("productTable");
+
+      // Listar produtos
+      async function carregarProdutos() {
+        try {
+          const res = await fetch(apiUrl);
+          const produto = await res.json();
+          table.innerHTML = "";
+          produto.forEach((p) => {
+            const tr = document.createElement("tr");
+            tr.innerHTML = `
+            <td>${p.nome}</td>
+            <td>R$${p.preco}</td>
+            <td>${p.descricao}</td>
+            <td>${p.estoque}</td>
+            <td class="actions">
+              <button onclick="editarProduto('${p.id}','${p.nome}','${p.preco}','${p.descricao}','${p.estoque}')">Editar</button>
+              <button class="delete" onclick="deletarProduto('${p.id}')">Excluir</button>
+            </td>
+          `;
+            table.appendChild(tr);
+          });
+        } catch (error) {
+          console.error("Erro ao carregar produtos:", error);
+        }
+      }
+
+      // Criar ou atualizar
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const id = document.getElementById("productId").value;
+        const nome = document.getElementById("nome").value;
+        const preco = document.getElementById("preco").value;
+        const descricao = document.getElementById("descricao").value;
+        const estoque = document.getElementById("estoque").value;
+        const produto = { nome, preco, descricao, estoque };
+
+        try {
+          if (id) {
+            // Atualiza produto existente
+            await fetch(`${apiUrl}/${id}`, {
+              method: "PUT",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(produto),
+            });
+          } else {
+            // Cria novo produto
+            await fetch(apiUrl, {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(produto),
+            });
+          }
+
+          // Limpa formulário e atualiza tabela
+          novoProduto();
+          carregarProdutos();
+        } catch (error) {
+          console.error("Erro ao salvar produto:", error);
+        }
+      });
+
+      // Editar produto
+      function editarProduto(id, nome, preco, descricao, estoque) {
+        document.getElementById("productId").value = id;
+        document.getElementById("nome").value = nome;
+        document.getElementById("preco").value = preco;
+        document.getElementById("descricao").value = descricao;
+        document.getElementById("estoque").value = estoque;
+      }
+
+      // Limpar formulário para novo produto
+      function novoProduto() {
+        form.reset();
+        document.getElementById("productId").value = "";
+      }
+
+      // Deletar produto
+      async function deletarProduto(id) {
+        if (confirm("Deseja excluir este produto?")) {
+          try {
+            await fetch(`${apiUrl}/${id}`, { method: "DELETE" });
+            carregarProdutos();
+          } catch (error) {
+            console.error("Erro ao deletar produto:", error);
+          }
+        }
+      }
+
+      // Inicializa tabela
+      carregarProdutos();
+    </script>
+  </body>
+</html>

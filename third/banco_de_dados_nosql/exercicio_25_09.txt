@@ -1,0 +1,88 @@
+Hospitais
+{
+  "_id": "santa-ignes-75",
+  "nome": "Hospital Santa Ignês",
+  "endereco": {
+    "rua": "R. Dr. Adhemar de Barros",
+    "numero": "75",
+    "bairro": "Centro",
+    "cidade": "Indaiatuba",
+    "estado": "SP"
+  },
+  "contato": {
+    "telefone": "(19) 3834-8000"
+  },
+  "servicos": [
+    "Pronto-socorro 24h",
+    "Internação",
+    "Centro Cirúrgico",
+    "Maternidade"
+  ]
+}
+---
+{
+  "_id": "haoc-153",
+  "nome": "Hospital Augusto de Oliveira Camargo (HAOC)",
+  "endereco": {
+    "rua": "R. Dom João VI",
+    "numero": "153",
+    "bairro": "Centro",
+    "cidade": "Indaiatuba",
+    "estado": "SP"
+  },
+  "contato": {
+    "telefone": "(19) 3801-8100"
+  },
+  "servicos": [
+    "Pronto-atendimento",
+    "UTI adulto e pediátrica",
+    "Hemodiálise",
+    "Banco de sangue"
+  ]
+}
+---
+{
+  "_id": "dia-252",
+  "nome": "Clínica Médica Indaiatuba (Hospital Dia)",
+  "endereco": {
+    "rua": "R. Quinze de Novembro",
+    "numero": "252",
+    "bairro": "Centro",
+    "cidade": "Indaiatuba",
+    "estado": "SP"
+  },
+  "contato": {
+    "telefone": "(19) 3875-4080"
+  },
+  "servicos": [
+    "Consultas",
+    "Exames de imagem",
+    "Exames laboratoriais",
+    "Pequenas cirurgias"
+  ]
+}
+
+Pacientes
+{
+  "_id": "0001-a",
+  "nome": "Caio Simonassi",
+  "idade": 21,
+  "tipo sanguineo": "O+", 
+  "ultima visita":{
+  "horario-entrada":"2025-03-16 23:01:58GTM",
+  "descricao": "Relatos de muita dor nas costas",
+  "horario-saida":"2025-03-17 00:24:15GTM",
+},
+}
+---
+{
+  "_id": "0001-b",
+  "nome": "Jamilly de Avellar",
+  "idade": 21,
+  "tipo sanguineo": "B-", 
+  "ultima visita":{
+  "horario-entrada":"2025-08-21 17:54:12GTM",
+  "descricao": "Suspeita de anemia"
+  "horario-saida":"2025-08-21 18:32:48GTM",
+},
+}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <!-- Configuração do Viewport para design responsivo -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Spring Boot Integration</title>
+    <!-- Importa o CDN do Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Configura a fonte globalmente e aplica o modo escuro padrão */
+      body {
+        font-family: "Inter", sans-serif;
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "primary-dark": "#131313",
+              "secondary-gray": "#e6e6e6",
+              "accent-metal":
+                "#ef4444" /* Red accent (like a metal logo or amp light) */,
+              "accent-metal-hover": "#dc2626",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+
+  <!-- Aplica um fundo escuro e centraliza o conteúdo -->
+  <body class="min-h-screen bg-gray-900 flex items-center justify-center p-4">
+    <!-- Container principal do formulário (Card) -->
+    <div
+      class="w-full max-w-md bg-primary-dark shadow-2xl rounded-xl p-8 space-y-6 border border-secondary-gray/50"
+    >
+      <!-- Título -->
+      <header class="text-center">
+        <h1 class="text-3xl font-extrabold text-white tracking-wider">
+          LOGIN ACCESS
+        </h1>
+        <p class="text-sm text-gray-400 mt-2">
+          Integração Spring Boot Security
+        </p>
+      </header>
+
+      <!-- Formulário de Login -->
+      <!-- IMPORTANTE: O action e method devem corresponder ao seu endpoint de login no Spring Security -->
+      <form action="/login" method="POST" class="space-y-6">
+        <!-- Campo de Login (Username/Email) -->
+        <div>
+          <label
+            for="username"
+            class="block text-sm font-medium text-gray-300 mb-1"
+          >
+            Usuário ou Email
+          </label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            autocomplete="username"
+            required
+            class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-500 focus:ring-accent-metal focus:border-accent-metal transition duration-150 ease-in-out"
+            placeholder="Seu nome de usuário ou email"
+          />
+        </div>
+
+        <!-- Campo de Senha -->
+        <div>
+          <label
+            for="password"
+            class="block text-sm font-medium text-gray-300 mb-1"
+          >
+            Senha
+          </label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            autocomplete="current-password"
+            required
+            class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-500 focus:ring-accent-metal focus:border-accent-metal transition duration-150 ease-in-out"
+            placeholder="Sua senha secreta"
+          />
+        </div>
+
+        <!-- Botão de Submissão -->
+        <button
+          type="submit"
+          class="w-full flex justify-center py-2 px-4 border border-transparent rounded-lg shadow-sm text-lg font-bold text-white bg-accent-metal hover:bg-accent-metal-hover focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-primary-dark focus:ring-accent-metal transition duration-150 ease-in-out uppercase tracking-widest"
+        >
+          Entrar
+        </button>
+      </form>
+
+      <!-- Informação ou link adicional -->
+      <div class="text-center">
+        <a
+          href="#"
+          class="text-sm text-gray-400 hover:text-accent-metal transition duration-150 ease-in-out"
+        >
+          Esqueceu sua senha?
+        </a>
+      </div>
+    </div>
+  </body>
+</html>
